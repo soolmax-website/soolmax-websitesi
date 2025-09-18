@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soolmax - Professional Cleaning Services Malta</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        .header { background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 1rem 0; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #1e40af; }
+        .logo-icon { width: 40px; height: 40px; background: linear-gradient(135deg, #1e40af, #3b82f6); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 18px; }
+        .logo-text { font-size: 24px; font-weight: bold; }
+        .nav { display: flex; gap: 20px; align-items: center; }
+        .nav a { text-decoration: none; color: #333; font-weight: 500; }
+        
+        /* Hero */
+        .hero { background: linear-gradient(135deg, #1e40af, #3b82f6); color: white; padding: 120px 0 80px; text-align: center; margin-top: 70px; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700; }
+        .hero p { font-size: 1.3rem; margin-bottom: 2rem; color: #bfdbfe; }
+        .hero-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .btn { display: inline-block; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; transition: all 0.3s; }
+        .btn-whatsapp { background: #25D366; color: white; }
+        .btn-whatsapp:hover { background: #128C7E; transform: translateY(-2px); }
+        .btn-call { background: white; color: #1e40af; }
+        .btn-call:hover { background: #f8fafc; transform: translateY(-2px); }
+        
+        /* Trust indicators */
+        .trust { background: #eff6ff; padding: 40px 0; }
+        .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .trust-item { text-align: center; padding: 20px; }
+        .trust-item h4 { color: #1e40af; margin-bottom: 10px; font-size: 18px; }
+        
+        /* Services */
+        .services { padding: 80px 0; background: white; }
+        .services h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #1e40af; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .service-card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .service-card:hover { transform: translateY(-5px); }
+        .service-card h3 { color: #1e40af; font-size: 1.5rem; margin-bottom: 15px; }
+        .service-card p { color: #666; margin-bottom: 20px; }
+        .service-card ul { list-style: none; margin-bottom: 25px; }
+        .service-card li { padding: 5px 0; color: #555; }
+        .service-card li:before { content: "✓"; color: #10b981; font-weight: bold; margin-right: 10px; }
+        .btn-primary { background: #1e40af; color: white; padding: 12px 25px; border-radius: 6px; }
+        .btn-primary:hover { background: #1d4ed8; }
+        
+        /* Contact */
+        .contact { background: #f8fafc; padding: 80px 0; }
+        .contact h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #1e40af; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+        .contact-info { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .contact-item { margin-bottom: 20px; padding: 15px 0; border-bottom: 1px solid #e5e7eb; }
+        .contact-item:last-child { border-bottom: none; }
+        .contact-item strong { color: #1e40af; display: block; margin-bottom: 5px; }
+        
+        /* Footer */
+        .footer { background: #1e40af; color: white; padding: 60px 0 30px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer h4 { margin-bottom: 20px; }
+        .footer ul { list-style: none; }
+        .footer ul li { padding: 5px 0; }
+        .footer a { color: #bfdbfe; text-decoration: none; }
+        .footer a:hover { color: white; }
+        .footer-bottom { border-top: 1px solid #3730a3; padding-top: 30px; text-align: center; color: #bfdbfe; }
+        .social-links { display: flex; gap: 15px; margin-top: 15px; }
+        .social-links a { background: #3730a3; padding: 10px; border-radius: 6px; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .contact-grid { grid-template-columns: 1fr; gap: 30px; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <div class="logo-icon">S</div>
+                <div class="logo-text">Soolmax</div>
+            </a>
+            <nav class="nav">
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+                <a href="tel:+35677909028" class="btn btn-call">Call Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Professional Cleaning Services</h1>
+            <p>OHSA Compliant • EU Standards • Trusted Partner in Malta</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/35677909028?text=Hi! I'm interested in Soolmax cleaning services. Can you help me?" class="btn btn-whatsapp" target="_blank">
+                    WhatsApp Us
+                </a>
+                <a href="tel:+35677909028" class="btn btn-call">
+                    Call +356 77909028
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="trust">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <h4>OHSA Compliant</h4>
+                    <p>Health & Safety Standards</p>
+                </div>
+                <div class="trust-item">
+                    <h4>EU Certified</h4>
+                    <p>European Hygiene Standards</p>
+                </div>
+                <div class="trust-item">
+                    <h4>24/7 Available</h4>
+                    <p>Flexible Scheduling</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Cleaning Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Office Cleaning</h3>
+                    <p>Professional office cleaning services for corporate environments ensuring productive and healthy workspaces.</p>
+                    <ul>
+                        <li>Daily/Weekly/Monthly schedules</li>
+                        <li>OHSA compliant procedures</li>
+                        <li>Eco-friendly products</li>
+                        <li>Flexible timing</li>
+                    </ul>
+                    <a href="https://wa.me/35677909028?text=Hi! I'm interested in office cleaning services for my business. Can you provide more information?" class="btn btn-primary" target="_blank">Get Quote</a>
+                </div>
+
+                <div class="service-card">
+                    <h3>Gym & Fitness Cleaning</h3>
+                    <p>Specialized cleaning for gyms and fitness centers with focus on sanitization and equipment care.</p>
+                    <ul>
+                        <li>Equipment sanitization</li>
+                        <li>Locker room deep clean</li>
+                        <li>Floor maintenance</li>
+                        <li>Odor control</li>
+                    </ul>
+                    <a href="https://wa.me/35677909028?text=Hello! I'd like to know more about your gym and fitness facility cleaning services." class="btn btn-primary" target="_blank">Get Quote</a>
+                </div>
+
+                <div class="service-card">
+                    <h3>Beauty Salon & Spa</h3>
+                    <p>Premium cleaning services for beauty salons and spas, maintaining luxury standards and hygiene.</p>
+                    <ul>
+                        <li>Treatment room sanitization</li>
+                        <li>Luxury ambiance maintenance</li>
+                        <li>EU hygiene compliance</li>
+                        <li>Sensitive area care</li>
+                    </ul>
+                    <a href="https://wa.me/35677909028?text=Hi! I'm interested in cleaning services for my beauty salon/spa. Can you help?" class="btn btn-primary" target="_blank">Get Quote</a>
+                </div>
+
+                <div class="service-card">
+                    <h3>Retail Store Cleaning</h3>
+                    <p>Comprehensive cleaning solutions for retail spaces, ensuring customer-ready environments.</p>
+                    <ul>
+                        <li>Customer area cleaning</li>
+                        <li>Display maintenance</li>
+                        <li>Floor care</li>
+                        <li>Window cleaning</li>
+                    </ul>
+                    <a href="https://wa.me/35677909028?text=Hello! I need cleaning services for my retail store. Can you provide a quote?" class="btn btn-primary" target="_blank">Get Quote</a>
+                </div>
+
+                <div class="service-card">
+                    <h3>Post-Construction</h3>
+                    <p>Turnover cleaning services for construction sites, Airbnb properties, and commercial handovers.</p>
+                    <ul>
+                        <li>Deep construction cleanup</li>
+                        <li>Move-in ready preparation</li>
+                        <li>Debris removal</li>
+                        <li>Final inspection</li>
+                    </ul>
+                    <a href="https://wa.me/35677909028?text=Hi! I need post-construction cleaning services. Can you assist?" class="btn btn-primary" target="_blank">Get Quote</a>
+                </div>
+
+                <div class="service-card">
+                    <h3>Staff Outsourcing</h3>
+                    <p>Professional cleaning staff for short and long-term contracts, fully trained and insured.</p>
+                    <ul>
+                        <li>Trained professionals</li>
+                        <li>Flexible contracts</li>
+                        <li>Insurance covered</li>
+                        <li>Quality supervision</li>
+                    </ul>
+                    <a href="https://wa.me/35677909028?text=Hello! I'm interested in cleaning staff outsourcing. Can you provide details?" class="btn btn-primary" target="_blank">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact Soolmax</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>Phone</strong>
+                        <a href="tel:+35677909028" style="color: #1e40af; text-decoration: none;">+356 77909028</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Email</strong>
+                        <a href="mailto:soolmaxmt@gmail.com" style="color: #1e40af; text-decoration: none;">soolmaxmt@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Address</strong>
+                        Sapphire 158 - 8 Triq San Pawl<br>
+                        SPB3418, San Pawl il-Bahar<br>
+                        Malta
+                    </div>
+                    <div class="contact-item">
+                        <a href="https://wa.me/35677909028?text=Hi! I'm interested in Soolmax cleaning services. Can you help me?" class="btn btn-whatsapp" target="_blank" style="display: inline-block; margin-top: 15px;">
+                            WhatsApp Us Now
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <h3 style="margin-bottom: 20px; color: #1e40af;">Why Choose Soolmax?</h3>
+                    <div class="contact-item">
+                        <strong>OHSA Compliant</strong>
+                        All our services meet strict health and safety standards for complete peace of mind.
+                    </div>
+                    <div class="contact-item">
+                        <strong>Professional Team</strong>
+                        Our team consists of fully trained, insured, and experienced cleaning professionals.
+                    </div>
+                    <div class="contact-item">
+                        <strong>Flexible Scheduling</strong>
+                        We work around your schedule with daily, weekly, or monthly cleaning options.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Soolmax Limited</h4>
+                    <p>Your professional solutions partner for commercial cleaning services, staff supply, and hygiene products in Malta.</p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/company/soolmax">LinkedIn</a>
+                        <a href="https://facebook.com/soolmax">Facebook</a>
+                        <a href="https://instagram.com/soolmax">Instagram</a>
+                        <a href="https://tiktok.com/@soolmax">TikTok</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li>Office Cleaning</li>
+                        <li>Gym & Fitness Cleaning</li>
+                        <li>Beauty Salon & Spa</li>
+                        <li>Retail Store Cleaning</li>
+                        <li>Post-Construction</li>
+                        <li>Staff Outsourcing</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <p>Phone: +356 77909028</p>
+                    <p>Email: soolmaxmt@gmail.com</p>
+                    <p>Sapphire 158 - 8 Triq San Pawl<br>SPB3418, San Pawl il-Bahar, Malta</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Soolmax Limited. All rights reserved. | OHSA Compliant | EU Hygiene Standards | Fully Insured</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
